@@ -1,0 +1,65 @@
+﻿<Window x:Class="Esercitazione_2.WPF.Views.SignInView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esercitazione_2.WPF.Views"
+        xmlns:vm="clr-namespace:Esercitazione_2.WPF.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:SignInViewModel, IsDesignTimeCreatable=True}"
+        Title="SignInView" Height="250" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1" Grid.Row="1" BorderThickness="5" CornerRadius="4">
+            <Border.BorderBrush>
+                <RadialGradientBrush RadiusX="1">
+                    <GradientStop Color="Gray" Offset="0.0"/>
+                    <GradientStop Color="BlanchedAlmond" Offset="0.0"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="DarkOliveGreen"/>
+                    <GradientStop Color="Beige"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="220"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="Authentication"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       FontSize="20" Foreground="DarkGreen"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom"
+                       Foreground="Black" Text="Username: ">
+            </TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="2" Margin="6,8" VerticalContentAlignment="Center" Text="{Binding Username}"></TextBox>
+            <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Bottom"
+                       Foreground="Black" Text="Password: ">
+            </TextBlock>
+            <TextBox Grid.Column="1" Grid.Row="4" Margin="6,8" VerticalContentAlignment="Center" Text="{Binding Password}"></TextBox>
+            <Button Grid.Column="1" Grid.Row="5" Margin="10" Content="Sign In" Command="{Binding Path=SignInCommand}"/>
+        </Grid>
+    </Grid>
+</Window>
+

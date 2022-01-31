@@ -1,0 +1,35 @@
+﻿<Window x:Class="Week7.WPF.ComplexLayout.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Week7.WPF.ComplexLayout"
+        mc:Ignorable="d"
+        Title="Complex Layout" Height="350" Width="550">
+    <DockPanel>
+        <TextBlock Background="AliceBlue"
+                   DockPanel.Dock="Top" >Ciao</TextBlock>
+        <TextBlock DockPanel.Dock="Bottom" 
+                   Background="LightBlue">Altro testo come footer</TextBlock>
+        <TextBlock Background="CadetBlue"
+                   DockPanel.Dock="Left">Hola ma a sinistra</TextBlock>
+        <DockPanel Background="DarkCyan">
+            <StackPanel DockPanel.Dock="Top">
+                <Button Height="30px" Width="100px" 
+                        Margin="10, 5, 10, 5"
+                        HorizontalAlignment="Left" Click="AddName">
+                    Bottone 1
+                </Button>
+                <Button Height="30 px" Width="100px"
+                        HorizontalAlignment="Left" Margin="10, 0, 0, 10" Click="Clear">Bottone 2</Button>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock Background="LightCyan">Testo sotto i button a caso</TextBlock>
+                <ListBox x:Name="ListNames" Width="300px" Height="150px" Margin="20">
+                    <ListBoxItem>Martina</ListBoxItem>
+                </ListBox>
+
+            </StackPanel>
+        </DockPanel>
+    </DockPanel>
+</Window>

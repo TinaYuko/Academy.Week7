@@ -1,0 +1,27 @@
+﻿<Window x:Class="Week7.WPF.BindingDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Week7.WPF.BindingDemo"
+        mc:Ignorable="d"
+        Title="BindingDemo" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel
+            Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Cognome"/>
+            <!--Lista che conterrà tutti i cognomi--> 
+            <ComboBox x:Name="cmbPeople" Width="120" Margin="2,0"
+                      ItemsSource="{Binding Path=People}"
+                      DisplayMemberPath="LastName"
+                      SelectedItem="{Binding Path=SelectedPerson}"/>
+            <Button Command="{Binding Path=SalutaCommand}">Salutami</Button>
+        </StackPanel>
+
+        <StackPanel>
+            <!--Testo che conterrà il saluto per la persona specifica-->
+            <TextBlock x:Name="txtSaluto" Text="{Binding Path=TextSaluto}"/>
+            
+        </StackPanel>
+    </StackPanel>
+</Window>

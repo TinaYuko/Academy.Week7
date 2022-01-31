@@ -1,0 +1,33 @@
+﻿<Window x:Class="Avanade.Allocation.WPF.Views.EmployeeEditorView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avanade.Allocation.WPF.Views"
+        xmlns:vm="clr-namespace:Avanade.Allocation.WPF.ViewModels"
+        xmlns:views="clr-namespace:Avanade.Allocation.WPF.Views"
+        mc:Ignorable="d"
+        Title="EmployeeEditorView" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance Type=vm:EmployeeEditorViewModel, IsDesignTimeCreatable=True}">
+
+    <Window.Resources>
+        <DataTemplate x:Key="EmployeeRowTemplate">
+            <views:EmployeeRowView/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="4">
+            <TextBlock VerticalAlignment="Center" FontWeight="Bold" FontSize="36" Margin="4,0,0,0" Text="Gestione dei dipendenti"></TextBlock>
+        </StackPanel>
+        <Button Margin="4" Grid.Column="1" Grid.Row="0" Command="{Binding CreateEmployee}">Crea Impiegato</Button>
+        <ListBox Grid.Row="1" Grid.ColumnSpan="2" Margin="4" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Path=Employees}" ItemTemplate="{StaticResource EmployeeRowTemplate}"/>
+    </Grid>
+</Window>

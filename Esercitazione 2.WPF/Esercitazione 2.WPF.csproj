@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Esercitazione_2.WPF</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\eBay-Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Esercitazione 2.Core.Mock\Esercitazione 2.Core.Mock.csproj" />
+    <ProjectReference Include="..\Esercitazione 2.Core\Esercitazione 2.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\eBay-Logo.png" />
+  </ItemGroup>
+
+</Project>

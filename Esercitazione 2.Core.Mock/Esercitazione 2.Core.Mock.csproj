@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Esercitazione_2.Core.Mock</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Avanade.Allocation.Core.Mock\Avanade.Allocation.Core.Mock.csproj" />
+    <ProjectReference Include="..\Esercitazione 2.Core\Esercitazione 2.Core.csproj" />
+  </ItemGroup>
+
+</Project>
